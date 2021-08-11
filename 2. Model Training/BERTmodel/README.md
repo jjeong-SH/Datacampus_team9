@@ -4,6 +4,11 @@ https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추�
 
 **감정 7분류: neutral, happiness, fear, disgust, surprise, anger, sadness**
 
+** 아직 수정중입니다!! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ds6jqKRNFG99Mq68FFqr3U0bJTf3odGZ)
+
+** 모델 파라미터, 파일 업뎃 후 py파일로 저장, api에서 끌어다 쓸 수 있는 모델 저장해야함
+
+
 ## 추가학습을 위한 data
 Data collection 폴더
 
