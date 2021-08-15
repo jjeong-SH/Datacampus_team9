@@ -1,21 +1,58 @@
-DNN 음성합성기 + BERT 감성분석 시스템
-=====
+# Speech Synthesis Model
+**실험 중인 model**
+1. tacotron2-vae(https://github.com/jinhan/tacotron2-vae): Tacotron2 + WaveGlow
+2. gst-tacotron(https://github.com/syang1993/gst-tacotron): Tacotron으로 melspectogram 생성과 audio 변환을 한번에(End-to-End)
+3. only vocoders:
+   - WaveGlow
+   - WaveGan
+   - VocGan(https://arxiv.org/pdf/2007.15256.pdf)
 
-아이들을 위한 ABC는 자연어의 감성분석 기술과 TTS 음성합성 기술을 융합한 개인 오디오북 제작 시스템입니다.
+[EDIT] 각자 돌려보고 돌아가는지 보고하기
 
-DNN 음성합성기 : FastSpeech 기반 Multi-Speaker end-to-end 음성 합성 시스템
+------
+
+
+1.tacotron2-vae
 -----
+Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram을 만들 수 있게 하는 모델 + WaveGlow vocoder
 
-<img src = "https://user-images.githubusercontent.com/83811753/127833424-94bfd980-ae40-44d7-be33-02cf1782baa0.png" :width = 500 height = 500>
+![vae1](https://user-images.githubusercontent.com/80621384/129482786-dbe8a1c9-feb4-4da3-a6f5-58e8d0c54f7c.png)
+
+["Learning Latent Representations for Style Control and Transfer in End-to-end Speech Synthesis"](https://arxiv.org/pdf/1812.04342.pdf)
+
+ -> 해당 논문과 유사하지만 vocoder가 WaveNet이 아님
+
+### issuses
+- [SOLVED] requirements 버전 호환의 문제
+```
+# 다른 건 몰라도 이거 세개는 꼭 맞춰줘야함
+tensorflow==1.14
+tensorboardX==1.8
+numpy<1.17
+torch==0.4.1.post2 (0.4.1도 가능한지는 확인 중)
+```
+이후 발생하는 tensorboard-plugin-wit 에러는 pip freeze 이후 해당 패키지 uninstall 해줘야함 --> 후에 tensorboard로 학습 상황 확인 가능
+
+- [SOLVED] "IndexError: Caught IndexError in DataLoader worker process 0." : train, valid 데이터셋 확인, 형식에 맞지 않는 문자열 수정
+- 
+- [SOLVED] DataLoader의 num_worker=1 crashes : num_worker=0으로 바꿔주기
+- 
+- [검토중] SHUTDOWN ERROR 오류 없이 프로그램 종료 -> 아마 GPU out-of-memory인듯?
+
+![KakaoTalk_20210815_184737867](https://user-images.githubusercontent.com/80621384/129483347-523976ff-98ea-48eb-b63f-524c7a040206.png)
+
+(0815note) 지금은 batch_size=4로 줄이고 데이터셋도 절반만 가지고 돌리는 중.. **대책 필요**
 
 
-## 1. Text-to-Mel Prediction
+### further issus
+- WaveGlow 학습 속도가 너무 느리고 epoch도 많이 돌아야 함 -> 다른 pretrained vocoder를 가져와(+추가학습) melspectrogram eval하는 후에 붙여보면 어떨까?
+- 
+https://github.com/chldkato/Tacotron-MelGAN-Korean, https://github.com/HGU-DLLAB/Korean-FastSpeech2-Pytorch
 
-#### FastSpeech
-<img src = "https://user-images.githubusercontent.com/83811753/127833121-6d648917-c4d9-42d6-babf-aaea539d6ccd.png" :width = 400 height = 400>
+WaveGan이나 VocGan, (아직 영어 데이터셋에서만 돌아가기는 하지만) ParallelWaveGan 등 논문 상 훨씬 적은 시간이 걸린다고 함
 
 
-TXT를 Mel-Spectrogram으로 변환하는 단계의 TTS 시스템으로, 기존의 단점을 보완하기 위해 mel-spectrogram을 non-autoregressive하게 생성한다. 
-
-
+2.gst-tacotron
+-----
+추가 
 
