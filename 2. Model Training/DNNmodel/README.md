@@ -16,6 +16,13 @@
 -----
 Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram을 만들 수 있게 하는 모델 + WaveGlow vocoder
 
+** model testing을 위해 disgust emotion dataset으로만 돌려보는 중(계속 학습중임!!) 
+
+--> https://drive.google.com/drive/folders/1tMJgUUvb0NACwtaNgnuIFxhzLos3PPdv?usp=sharing
+
+  - tacotron2-vae 안에 filelists 폴더 체크(train, valid, test)
+  - (0816.note) 현재 0816_testing_vae_dis 코랩 파일로 계속 학습중 **건들지말기**
+
 ![vae1](https://user-images.githubusercontent.com/80621384/129482786-dbe8a1c9-feb4-4da3-a6f5-58e8d0c54f7c.png)
 
 ["Learning Latent Representations for Style Control and Transfer in End-to-end Speech Synthesis"](https://arxiv.org/pdf/1812.04342.pdf)
