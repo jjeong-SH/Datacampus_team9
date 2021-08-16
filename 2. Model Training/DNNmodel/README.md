@@ -61,3 +61,23 @@ WaveGan이나 VocGan, (아직 영어 데이터셋에서만 돌아가기는 하�
 
 추가바람
 
+-----
+## 3. Vocoder 
+실험중인 모델은 원래 보코더로 WaveGlow를 사용
+하지만 WaveGlow도 새로 학습해줘야하고 보코더 학습에 시간이 오래 걸리기 때문에 pre-trained 모델인 MelGAN 을 VAE의 보코더로 사용하고자 시도 중.
+
+https://github.com/chldkato/Tacotron-MelGAN-Korean -> 시도 중인 코드 
+
+### Issues
+1. [Solved] VAE의 mel-spectrogram이 MelGAN의 input으로 들어갈 수 있어야 한다.
+-> a. VAE의 Decoder와 b. inference.py 코드를 수정하여 Tacotron2-VAE의 중간 단계 아웃풋인 mel-spectrogram이 
+WaveGlow의 infer로 바로 들어가지 않고, tacotron-output이라는 폴더 안에 바로 저장되는 방향으로 바꾸었다. 
+
+<img src = "https://user-images.githubusercontent.com/83811753/129574900-8c29ddda-0992-4d66-a4f9-70bc6190e65c.png" : width = 500 height = 100>
+
+2. (8/16 시도중) 생성한 mel-spectrogram이 MelGAN의 input으로 들어갔는데, padding 개수가 안맞다는 오류가 떴다.
+
+<img src = "https://user-images.githubusercontent.com/83811753/129575182-87688b6d-9d35-4966-a876-5ad8916b7f15.png" : width = 700 height = 300>
+
+<img src = "https://user-images.githubusercontent.com/83811753/129576076-c081d405-b531-4f70-a05a-00d0fe9896ec.png" : width = 450 height = 500>
+-> 현재 gan.py 의 파란색 하이라이트 부분 확인 중임
