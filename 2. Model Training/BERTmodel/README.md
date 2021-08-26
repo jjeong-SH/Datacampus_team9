@@ -4,7 +4,7 @@ https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추�
 
 **감정 4분류: neutral, happy, sad, angry**
 
-** 아직 수정중입니다!! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ds6jqKRNFG99Mq68FFqr3U0bJTf3odGZ)
+** 아직 수정중입니다!! [![Open In Colab](https://colab.research.google.com/drive/1ychrYmo9FHr1QwBlZseFFjxJTdOaswf4?usp=sharing)
 
 ** 모델 파라미터, 파일 업뎃 후 py파일로 저장, api에서 끌어다 쓸 수 있는 모델 저장해야함
 
@@ -23,7 +23,7 @@ Data collection 폴더
 #### 감정 distribution:
 ![image](https://user-images.githubusercontent.com/78553384/130914104-df4020fc-5811-4d3e-a757-7be296d46d36.png)
 
-총 26,369개의 데이터 추가학습
+총 17,929개의 데이터 추가학습
 
 ## Finetuning model
 Pretrained Language Model - BERT
