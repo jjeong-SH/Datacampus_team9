@@ -2,7 +2,7 @@
 
 https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추가학습시켜 동화책의 감정을 분류할 수 있도록 만든 classification 모델
 
-**감정 7분류: neutral, happiness, fear, disgust, surprise, anger, sadness**
+**감정 4분류: neutral, happy, sad, angry**
 
 ** 아직 수정중입니다!! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ds6jqKRNFG99Mq68FFqr3U0bJTf3odGZ)
 
@@ -15,13 +15,13 @@ Data collection 폴더
 - 감정 분류를 위한 음성 데이터셋의 scripts: 5차년도.csv + 5차년도_2차.csv
 - 카이스트 오디오북 scripts: kaist_scripts.xlsx에서 동화1, 동화2 sheet 추출 -> 각 약 600줄에 감정 직접 태깅
 
-=> 통합 후 data_withtales.csv 생성
+=> 통합 후 data_onlytales.csv 생성
 
 #### samples:
-<p align="center"><img src="https://user-images.githubusercontent.com/80621384/129039781-b2e33473-c78a-4f4e-80e5-152ec51246e4.png"></p>
+![image](https://user-images.githubusercontent.com/78553384/130914362-4dc2a58e-49e1-4292-8161-6f09ebd118b5.png)
 
 #### 감정 distribution:
-<p align="center"><img src="https://user-images.githubusercontent.com/80621384/129040025-36d136de-641c-44a0-9d17-af10324b2105.png"></p>
+![image](https://user-images.githubusercontent.com/78553384/130914104-df4020fc-5811-4d3e-a757-7be296d46d36.png)
 
 총 26,369개의 데이터 추가학습
 
@@ -74,4 +74,4 @@ patience = 3
 ```
 !pip install kss
 ```
-<p align="center"><img src="https://user-images.githubusercontent.com/80621384/129041628-dbae657a-8306-4f4c-b3c2-041a9f2a913f.png"></p>
+![image](https://user-images.githubusercontent.com/78553384/130914498-1eb05a1a-8555-4478-9fda-2e11ce4f0e94.png)
