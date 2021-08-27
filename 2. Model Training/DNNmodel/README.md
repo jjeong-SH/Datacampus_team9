@@ -1,26 +1,12 @@
-# Speech Synthesis Model
-**실험 중인 model**
-1. tacotron2-vae(https://github.com/jinhan/tacotron2-vae): Tacotron2 + WaveGlow
-2. gst-tacotron(https://github.com/syang1993/gst-tacotron): Tacotron으로 melspectogram 생성과 audio 변환을 한번에(End-to-End)
-3. only vocoders:
-   - WaveGlow
-   - WaveGan
-   - VocGan(https://arxiv.org/pdf/2007.15256.pdf)
-
-[EDIT] 각자 돌려보고 돌아가는지 보고하기
-
-------
+# Emotion TTS Model
 
 
-## 1.tacotron2-vae
+## 1.tacotron2
 Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram을 만들 수 있게 하는 모델 + WaveGlow vocoder
 
-![vae1](https://user-images.githubusercontent.com/80621384/129482786-dbe8a1c9-feb4-4da3-a6f5-58e8d0c54f7c.png)
+!!!!모델 아키텍쳐!!!!
 
-["Learning Latent Representations for Style Control and Transfer in End-to-end Speech Synthesis"](https://arxiv.org/pdf/1812.04342.pdf)
 
- -> 해당 논문과 유사하지만 vocoder가 WaveNet이 아님
- 
 #### model testing을 위해 disgust emotion dataset으로만 돌려보는 중(계속 학습중임!!) 
 #### --> https://drive.google.com/drive/folders/1tMJgUUvb0NACwtaNgnuIFxhzLos3PPdv?usp=sharing
 
