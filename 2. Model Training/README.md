@@ -1,21 +1,19 @@
-DNN 음성합성기 + BERT 감성분석 시스템
+Emotion TTS + BERT 감성분석 시스템
 =====
 
-아이들을 위한 ABC는 자연어의 감성분석 기술과 TTS 음성합성 기술을 융합한 개인 오디오북 제작 시스템입니다.
+아이들을 위한 ABC는 자연어의 감성분석 기술과 TTS 음성합성 기술을 융합한 개인 오디오북 제작 시스템입니다.   
 
-DNN 음성합성기 : FastSpeech 기반 Multi-Speaker end-to-end 음성 합성 시스템
+
+Emotion TTS : Tacotron2 기반 TTS 시스템
 -----
+!!!model structure 추가!!!
 
-<img src = "https://user-images.githubusercontent.com/83811753/127833424-94bfd980-ae40-44d7-be33-02cf1782baa0.png" :width = 500 height = 500>
+### 1. Text-to-Mel Prediction
+: emotion embedding을 사용한 Tacotron2 모델 사용   
 
+- input : 스피커 id, 감성태그가 있는 텍스트   
+- output : 해당 스피커의 목소리에 emotion이 합성된 mel-spectrogram   
 
-## 1. Text-to-Mel Prediction
-
-#### FastSpeech
-<img src = "https://user-images.githubusercontent.com/83811753/127833121-6d648917-c4d9-42d6-babf-aaea539d6ccd.png" :width = 400 height = 400>
-
-
-TXT를 Mel-Spectrogram으로 변환하는 단계의 TTS 시스템으로, 기존의 단점을 보완하기 위해 mel-spectrogram을 non-autoregressive하게 생성한다. 
-
-
+### 2. Vocoder
+: WaveGlow를 통해 mel-spectrogram을 wav 파일로 변환
 
