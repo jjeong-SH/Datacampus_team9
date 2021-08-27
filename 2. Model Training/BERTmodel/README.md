@@ -70,7 +70,7 @@ patience = 3
 - max_len은 문장 길이 제3사분위보다 살짝 높은 값을 적용
 - early stopping 적용을 위한 patience 변수 설정
 
-## Output 예시(중간단계)
+## Output 예시(중간단계) - for_custom_clf.ipynb
 크롤링한 동화책 중 빨간모자 텍스트를 문장별로 분리해, 최종 학습을 마친 모델로 감정 태깅
 
 보다 정확한 문장 분리를 위해 kss 패키지 설치 필요
@@ -82,7 +82,7 @@ patience = 3
 
 ![labeled](https://user-images.githubusercontent.com/80621384/131179566-e3a22f3f-67dd-4817-8b1e-9b5cf51ed70a.png)
 
-## Output 예시(최종단계)
+## Output 예시(최종단계) - for_custom_clf.ipynb
 emotion transplant가 완료된 Tacotron2 모델에 넣어 화자의 목소리로 읽을 수 있도록 하기 위해 txt 데이터로 변환 
 -> 'reference_wav|텍스트|speaker_id|emotion|emotion'
 - reference_wav의 경우 화자의 어떤 음성파일 경로를 넣어도 상관없음. 본 프로젝트에서는 jvoice폴더의 jvoice_3_L.wav로 통일
