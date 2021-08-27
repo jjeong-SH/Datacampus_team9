@@ -1,0 +1,8 @@
+torch
+transformers==3.3.0
+mxnet==1.8.0
+gluonnlp==0.10.0
+sentencepiece
+kss
+tqdm
+matplotlib
