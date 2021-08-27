@@ -32,8 +32,13 @@
 
  - 음성 모사 시 transfer 학습을 위해 사용. 조원 박지현님이 직접 수능 국어 비문학 지문을 녹음하여 그 음성파일로 Tacotron2 모델을 추가 학습함.
  
- - 한 문장씩 나눠진 음성 데이터, 총 약 1시간 10분의 분량 -> 데이터가 부족해 하나의 2 channel wav 파일을 2개의 mono channel로 바꿔 증강 후 학습
+ - 한 문장씩 나눠진 음성 데이터, 총 약 1시간 10분의 분량 -> 데이터가 부족해 하나의 2 channel wav 파일을 2개의 mono channel로 바꿔 증강 후 학습.
+
+ - 본 프로젝트의 목적은 감정이 실리지 않은 monotone voice를 emotion transplant를 통해 생생하게 만들어주는 것이므로, 화자의 음성은 최대한 monotonous하게 녹음되었음.
+
+ - 추후 Tacotron2 모델의 학습 input으로 쓰기 위해 'wav파일경로|텍스트|speaker_id|감정|감정' 형식으로 텍스트 파일을 저장함.
 ```
+##텍스트 파일 예시
 /content/drive/MyDrive/emotion-tts/jvoice/jvoice_1_L.wav|과학적 지식은 어떻게 생성될까?|pjh|0|0
 /content/drive/MyDrive/emotion-tts/jvoice/jvoice_1_R.wav|과학적 지식은 어떻게 생성될까?|pjh|0|0
 /content/drive/MyDrive/emotion-tts/jvoice/jvoice_2_L.wav|이에 대한 설명은 과학 철학적 관점에 따라 달라질 수 있다.|pjh|0|0
