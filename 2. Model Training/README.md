@@ -6,7 +6,7 @@ Multi-Speaker Emotional Tacotron2 + BERT 감성분석 시스템
 ## 1. Multi-Speaker Emotional Tacotron2
 Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram을 만들 수 있게 하는 모델 + WaveGlow vocoder
 
-!!!!모델 아키텍쳐!!!!
+![Tacotron2](https://user-images.githubusercontent.com/52599330/131188384-68382e57-6e51-4a33-9695-662b5dbd498f.png)
 
 #### 1. Text normalization 한글이 아닌 텍스트를 한글로 변환 
 오늘은 8월 28일 -> 팔월 이십팔일
