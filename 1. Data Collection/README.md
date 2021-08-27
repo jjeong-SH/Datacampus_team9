@@ -4,7 +4,7 @@
 ## 1. 모델 훈련용
 ### Selvas AI 감정 화자 데이터 (https://github.com/emotiontts/emotiontts_open_db/tree/master/Dataset/SpeechCorpus)
 
-**(주)셀바스AI가 '구축한 로봇의 감정 및 개성을 표현할 수 있는 대화형 음성코퍼스 DB'로, Tacotron2 모델의 감정 학습을 위해 사용하였음**
+**(주)셀바스AI가 '구축한 로봇의 감정 및 개성을 표현할 수 있는 대화형 음성코퍼스 DB'로, Tacotron2 모델의 감정 학습을 위해 사용**
 
 - 감정 표현 기술 연구를 위한 연구용 DB (감정 대본) : 여성 5인, 남성 5인  
 		: 감정 대본을 사용하여 녹음  
@@ -14,9 +14,17 @@
 
 ### 감정 분류를 위한 대화 음성 데이터셋 (https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-002)
 **텍스트 데이터만 사용**
+
   - 동화책 문장의 감성 판단을 위한 학습 자료로 사용 (wav_id와 발화문, 상황만을 뽑아서 사용): 5차년도와 5차년도_2차
   
   ![csv_image](https://user-images.githubusercontent.com/80621384/131170880-dcbfc692-222c-4f04-9131-82e484db3ee4.png)
+  
+### 카이스트 오디오북 데이터셋 (https://aihub.or.kr/opendata/kaist-audiobook)
+**텍스트 데이터만 사용**
+
+ - 동화책 문장의 감성 판단을 위한 학습 자료로 사용 (index와 대사만을 뽑아서 사용): 동화1과 동화2 sheet
+ 
+![kaist](https://user-images.githubusercontent.com/80621384/131172282-07ce7e14-8c53-4e9b-b907-1b2a4e89e4be.png)
 
 
 ### 조원 박지현 음성 데이터
@@ -45,6 +53,6 @@
 ### 동화책 텍스트 데이터(https://www.grimmstories.com/ko/grimm_donghwa/ppalgan_moja)
 **텍스트로만 이루어져 있음**
 
-automated 감성 태깅 시스템이 잘 작동하는지 확인하기 위해 사용할, 감성이 분류되어 있지 않은 raw 동화책 텍스트 데이터
+automated 감성 태깅 시스템이 잘 작동하는지 확인하기 위해 사용할, 감이 분류되어 있지 않은 raw 동화책 텍스트 데이터
 
 <p align="center"><img src="https://user-images.githubusercontent.com/80621384/126634820-89deea72-28db-4f5b-9d51-0dba6d0ee49f.png", width="400"></p>
