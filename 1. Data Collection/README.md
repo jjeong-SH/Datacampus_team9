@@ -1,9 +1,15 @@
 # 사용할 데이터 정리 및 수집
 
 ## 1. 모델 훈련용
-### Selvas AI 감정 화자 데이터
+### Selvas AI 감정 화자 데이터 (https://github.com/emotiontts/emotiontts_open_db/tree/master/Dataset/SpeechCorpus)
 
-Tacotron2 모델 학습을 위해 사용하였음
+**(주)셀바스AI가 '구축한 로봇의 감정 및 개성을 표현할 수 있는 대화형 음성코퍼스 DB'로, Tacotron2 모델의 감정 학습을 위해 사용하였음**
+
+- 감정 표현 기술 연구를 위한 연구용 DB (감정 대본) : 여성 5인, 남성 5인  
+		: 감정 대본을 사용하여 녹음  
+		: 일반, 기쁨, 화남, 슬픔  
+    : 400문장(감정별 100문장) x 10명  
+    : 음성데이터, 녹음 대본, 대본 철자전사  
 
 ### 감성 대화 말뭉치 데이터 (https://aihub.or.kr/aidata/7978)
 **텍스트와 음성 데이터 둘 다 사용 예정**
