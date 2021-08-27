@@ -1,8 +1,7 @@
-torch
-transformers==3.3.0
-mxnet==1.8.0
-gluonnlp==0.10.0
-sentencepiece
-kss
-tqdm
-matplotlib
+Python >= 3.6
+PyTorch >= 1.7.0
+MXNet >= 1.4.0
+gluonnlp >= 0.6.0
+sentencepiece >= 0.1.6
+onnxruntime >= 0.3.0
+transformers >= 3.3.0
