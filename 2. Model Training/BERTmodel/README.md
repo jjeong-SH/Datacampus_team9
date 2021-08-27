@@ -8,6 +8,9 @@ https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추�
 
 - download nlp_checkpoint.pt --> https://drive.google.com/file/d/1ErLIhldgSchaKF3iNpG5O1C7eFWc8Maq/view?usp=sharing
 
+### load nlp_checkpoint.pt to predict sentiment & make txt file for tts
+for_custom_clf.ipynb 다운로드 후 주석처리 된 파일 경로를 원하는 동화책 텍스트 파일 경로로 변경
+
 
 ## 추가학습을 위한 data
 Data collection 폴더
