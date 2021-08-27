@@ -9,7 +9,7 @@ Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram�
 ![Tacotron2](https://user-images.githubusercontent.com/52599330/131188384-68382e57-6e51-4a33-9695-662b5dbd498f.png)
 
 #### 1. Text normalization 한글이 아닌 텍스트를 한글로 변환 
-오늘은 8월 28일 -> 팔월 이십팔일
+오늘은 8월 28일 -> 오늘은 팔월 이십팔일
 #### 2. 모델이 읽을 수 있게 Tokenize, 영문으로 발음 변환
 #### 3. Spectrogram 생성
 Tacotron2 모델 안 쪽에서 Embedding (text, emotion, speaker) 을 encoder / decoder 사이에서 concatenate 해줘서 감정, 스피커 별 특성을 포함한 Mel을 생성해줍니다.
