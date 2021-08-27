@@ -5,11 +5,11 @@ Multi-Speaker Emotional Tacotron2 + BERT 감성분석 시스템
 
 
 
-BERT 기반 감성분석 시스템
+###1. BERT 기반 감성분석 시스템
 -----
 임의의 텍스트를 input으로 주면 해당 텍스트에 맞는 감정을 output으로 주는 모델입니다.
 
-Multi-Speaker Emotional Tacotron2 : Tacotron2 기반 TTS 시스템
+###2. Multi-Speaker Emotional Tacotron2 : Tacotron2 기반 TTS 시스템
 -----
 !!!model structure 추가!!!
 
