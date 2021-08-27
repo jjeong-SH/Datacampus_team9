@@ -4,7 +4,9 @@ https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추�
 
 **감정 4분류: neutral, happy, sad, angry**
 
-Full code for training nlp_checkpoint.pt --> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UjGE84sDTyVxKvtEiYfolRwzRyQ-Dv9V?usp=sharing)
+- Full code for training nlp_checkpoint.pt --> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UjGE84sDTyVxKvtEiYfolRwzRyQ-Dv9V?usp=sharing)
+
+- download nlp_checkpoint.pt --> https://drive.google.com/file/d/1ErLIhldgSchaKF3iNpG5O1C7eFWc8Maq/view?usp=sharing
 
 
 ## 추가학습을 위한 data
@@ -16,7 +18,7 @@ Data collection 폴더
 => 통합 후 data_onlytales.csv 생성
 
 #### samples:
-![image](https://user-images.githubusercontent.com/78553384/130914362-4dc2a58e-49e1-4292-8161-6f09ebd118b5.png)
+![sentiment_id](https://user-images.githubusercontent.com/80621384/131179599-da884379-2184-42be-bae8-71195eaa91ed.png)
 
 #### 감정 distribution:
 ![image](https://user-images.githubusercontent.com/78553384/130914104-df4020fc-5811-4d3e-a757-7be296d46d36.png)
@@ -75,7 +77,7 @@ patience = 3
 
 **label_dict = {'neutral':0, 'happy':1, 'sad':2, 'angry':3 }**
 
-![image](https://user-images.githubusercontent.com/78553384/130914498-1eb05a1a-8555-4478-9fda-2e11ce4f0e94.png)
+![labeled](https://user-images.githubusercontent.com/80621384/131179566-e3a22f3f-67dd-4817-8b1e-9b5cf51ed70a.png)
 
 ## Output 예시(최종단계)
 emotion transplant가 완료된 Tacotron2 모델에 넣어 화자의 목소리로 읽을 수 있도록 하기 위해 txt 데이터로 변환 
