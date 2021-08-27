@@ -1,8 +1,12 @@
 # 사용할 데이터 정리 및 수집
 
 ## 1. 모델 훈련용
+### Selvas AI 감정 화자 데이터
+
+Tacotron2 모델 학습을 위해 사용하였음
+
 ### 감성 대화 말뭉치 데이터 (https://aihub.or.kr/aidata/7978)
-⇒ **텍스트와 음성 데이터 둘 다 사용 예정**
+**텍스트와 음성 데이터 둘 다 사용 예정**
   - 텍스트: 동화책 문장의 감성 판단을 위한 학습 자료로 사용 (각 문장 별 id와 화자의 성별, 감성 대분류, 내용만을 뽑아서 사용)
   
   ![feature그림](https://user-images.githubusercontent.com/80621384/126633249-dbbde35d-0f23-4ab3-9ea5-8790c9718ef0.png)
@@ -13,7 +17,7 @@
 
 
 ### KSS audio dataset (https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset) 
-⇒ **한국어 음성과 대본만을 사용**
+**한국어 음성과 대본만을 사용**
 
 음성 모사 시 transfer 학습을 위해 사용. KSS dataset으로 모델을 먼저 학습시킨 이후 개인의 음성을 추가 학습시킬 계획 
 
@@ -22,15 +26,24 @@
 ## 2. 시연용 (모델이 잘 돌아가는지 확인해보기 위한 데이터)
 
 ### 동화책 텍스트 데이터(https://www.grimmstories.com/ko/grimm_donghwa/ppalgan_moja)
-⇒ **텍스트로만 이루어져 있음**
+**텍스트로만 이루어져 있음**
 
 automated 감성 태깅 시스템이 잘 작동하는지 확인하기 위해 사용할, 감성이 분류되어 있지 않은 raw 동화책 텍스트 데이터
 
 <p align="center"><img src="https://user-images.githubusercontent.com/80621384/126634820-89deea72-28db-4f5b-9d51-0dba6d0ee49f.png", width="400"></p>
 
 ### 카이스트 오디오 북 데이터셋 (https://aihub.or.kr/opendata/kaist-audiobook) 
-⇒ **동화책 음성과 대본만을 사용**
+**동화책 음성과 대본만을 사용**
 
 speech synthesis 모델 완성 후, 추가학습을 통해 특정 사람의 목소리를 잘 모사할 수 있는지 판단할 때 사용 (감성 태깅은 되어있지 않음)
 
 <img src="https://user-images.githubusercontent.com/80621384/126635356-86b3f30a-d34d-44ef-a3ca-0f4f24653302.png" width="500">![오디오대본1](https://user-images.githubusercontent.com/80621384/126635379-18183d97-4c8f-4c76-9f19-757f430128a9.png)
+
+## 3. 최종 동화책 합성
+
+### 조원 박지현 음성 데이터
+**직접 녹음하여 사용**
+
+조원 박지현님이 직접 수능 국어 비문학 지문을 녹음하여 그 음성파일로 Tacotron2 모델을 추가 학습했습니다.
+
+이미지 추가필요
