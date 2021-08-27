@@ -1,4 +1,5 @@
 # 사용할 데이터 정리 및 수집
+모델 학습을 위한 데이터셋과, 모델이 완성된 후 여러 동화책 텍스트를 잘 읽을 수 있는지 확인하는 시연용 데이터셋으로 나뉨.
 
 ## 1. 모델 훈련용
 ### Selvas AI 감정 화자 데이터 (https://github.com/emotiontts/emotiontts_open_db/tree/master/Dataset/SpeechCorpus)
@@ -11,25 +12,35 @@
     : 400문장(감정별 100문장) x 10명  
     : 음성데이터, 녹음 대본, 대본 철자전사  
 
-### 감성 대화 말뭉치 데이터 (https://aihub.or.kr/aidata/7978)
-**텍스트와 음성 데이터 둘 다 사용 예정**
-  - 텍스트: 동화책 문장의 감성 판단을 위한 학습 자료로 사용 (각 문장 별 id와 화자의 성별, 감성 대분류, 내용만을 뽑아서 사용)
+### 감정 분류를 위한 대화 음성 데이터셋 (https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-002)
+**텍스트 데이터만 사용**
+  - 동화책 문장의 감성 판단을 위한 학습 자료로 사용 (wav_id와 발화문, 상황만을 뽑아서 사용): 5차년도와 5차년도_2차
   
-  ![feature그림](https://user-images.githubusercontent.com/80621384/126633249-dbbde35d-0f23-4ab3-9ea5-8790c9718ef0.png)
-
-  - 음성: 감성에 따른 음성 변조의 특성을 잡아내기 위해 사용 (대본은 텍스트 파일 문장과 동일 / 확장명 wav)
-  
-  ![음성사진1](https://user-images.githubusercontent.com/80621384/126633992-656ce39e-997c-4af5-bd54-75e808375b00.png)
+  ![csv_image](https://user-images.githubusercontent.com/80621384/131170880-dcbfc692-222c-4f04-9131-82e484db3ee4.png)
 
 
-### KSS audio dataset (https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset) 
-**한국어 음성과 대본만을 사용**
+### 조원 박지현 음성 데이터
+**직접 녹음하여 사용**
 
-음성 모사 시 transfer 학습을 위해 사용. KSS dataset으로 모델을 먼저 학습시킨 이후 개인의 음성을 추가 학습시킬 계획 
+ - 음성 모사 시 transfer 학습을 위해 사용. 조원 박지현님이 직접 수능 국어 비문학 지문을 녹음하여 그 음성파일로 Tacotron2 모델을 추가 학습함.
+ 
+ - 한 문장씩 나눠진 음성 데이터, 총 약 1시간 10분의 분량 -> 데이터가 부족해 하나의 2 channel wav 파일을 2개의 mono channel로 바꿔 증강 후 학습
+```
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_1_L.wav|과학적 지식은 어떻게 생성될까?|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_1_R.wav|과학적 지식은 어떻게 생성될까?|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_2_L.wav|이에 대한 설명은 과학 철학적 관점에 따라 달라질 수 있다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_2_R.wav|이에 대한 설명은 과학 철학적 관점에 따라 달라질 수 있다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_3_L.wav|그 중 하나가 경험적 검증 가능성에 의해 과학적 진술의 의미를 판가름하는 논리 실증주의적 관점이다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_3_R.wav|그 중 하나가 경험적 검증 가능성에 의해 과학적 진술의 의미를 판가름하는 논리 실증주의적 관점이다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_4_L.wav|연어의 회귀에 대한 연구 과정을 통해 과학적 지식의 생성 과정을 논리 실증주의적 관점에서 살펴보기로 하자.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_4_R.wav|연어의 회귀에 대한 연구 과정을 통해 과학적 지식의 생성 과정을 논리 실증주의적 관점에서 살펴보기로 하자.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_5_L.wav|과학자들은 연어가 어떻게 태어난 곳으로 돌아오는지 알고 싶었다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_5_R.wav|과학자들은 연어가 어떻게 태어난 곳으로 돌아오는지 알고 싶었다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_6_L.wav|인디언들은 초자연적인 힘에 의해 연어가 회귀한다고 믿고 있었는데, 과학자들은 이러한 설명이 경험적으로 검증될 수 없기 때문에 과학적 의미가 없다고 생각했다.|pjh|0|0
+/content/drive/MyDrive/emotion-tts/jvoice/jvoice_6_R.wav|인디언들은 초자연적인 힘에 의해 연어가 회귀한다고 믿고 있었는데, 과학자들은 이러한 설명이 경험적으로 검증될 수 없기 때문에 과학적 의미가 없다고 생각했다.|pjh|0|0
+```
 
-<p align="center"><img src="https://user-images.githubusercontent.com/80621384/126634266-cbeb4c56-07db-4937-9ace-3e793b85a357.png"></p>
-
-## 2. 시연용 (모델이 잘 돌아가는지 확인해보기 위한 데이터)
+## 2. 시연용
 
 ### 동화책 텍스트 데이터(https://www.grimmstories.com/ko/grimm_donghwa/ppalgan_moja)
 **텍스트로만 이루어져 있음**
@@ -37,19 +48,3 @@
 automated 감성 태깅 시스템이 잘 작동하는지 확인하기 위해 사용할, 감성이 분류되어 있지 않은 raw 동화책 텍스트 데이터
 
 <p align="center"><img src="https://user-images.githubusercontent.com/80621384/126634820-89deea72-28db-4f5b-9d51-0dba6d0ee49f.png", width="400"></p>
-
-### 카이스트 오디오 북 데이터셋 (https://aihub.or.kr/opendata/kaist-audiobook) 
-**동화책 음성과 대본만을 사용**
-
-speech synthesis 모델 완성 후, 추가학습을 통해 특정 사람의 목소리를 잘 모사할 수 있는지 판단할 때 사용 (감성 태깅은 되어있지 않음)
-
-<img src="https://user-images.githubusercontent.com/80621384/126635356-86b3f30a-d34d-44ef-a3ca-0f4f24653302.png" width="500">![오디오대본1](https://user-images.githubusercontent.com/80621384/126635379-18183d97-4c8f-4c76-9f19-757f430128a9.png)
-
-## 3. 최종 동화책 합성
-
-### 조원 박지현 음성 데이터
-**직접 녹음하여 사용**
-
-조원 박지현님이 직접 수능 국어 비문학 지문을 녹음하여 그 음성파일로 Tacotron2 모델을 추가 학습했습니다.
-
-이미지 추가필요
