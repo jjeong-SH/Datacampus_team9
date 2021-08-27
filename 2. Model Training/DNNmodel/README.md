@@ -1,38 +1,19 @@
 # Emotion TTS Model
 
 
-## 1.tacotron2
+## 1. Multi-Speaker Emotional Tacotron2
 Tacotron2 모델에 각 emotion의 Embedding을 주어 감정 별 melspetrogram을 만들 수 있게 하는 모델 + WaveGlow vocoder
 
 !!!!모델 아키텍쳐!!!!
 
+#### 1. Text normalization 한글이 아닌 텍스트를 한글로 변환 
+오늘은 8월 28일 -> 팔월 이십팔일
+#### 2. 모델이 읽을 수 있게 Tokenize, 영문으로 발음 변환
+#### 3. Spectrogram 생성
+Tacotron2 모델 안 쪽에서 Embedding (text, emotion, speaker) 을 encoder / decoder 사이에서 concatenate 해줘서 감정, 스피커 별 특성을 포함한 Mel을 생성해줍니다.
+#### 4. Vocoder 사용해서 wav 파일 생성
+Griffin-Lim 같은 통계적인 기존 기법의 성능이 좋지 않아 뉴럴 보코더인 WaveGlow를 사용하였습니다.
 
-#### model testing을 위해 disgust emotion dataset으로만 돌려보는 중(계속 학습중임!!) 
-#### --> https://drive.google.com/drive/folders/1tMJgUUvb0NACwtaNgnuIFxhzLos3PPdv?usp=sharing
-
-  - tacotron2-vae 안에 filelists 폴더 체크(train, valid, test)
-  - (0816.note) 현재 0816_testing_vae_dis 코랩 파일로 계속 학습중 **건들지말기**
-
-### issuses
-- [SOLVED] requirements 버전 호환의 문제
-```
-# 다른 건 몰라도 이거 세개는 꼭 맞춰줘야함
-tensorflow==1.14
-tensorboardX==1.8
-numpy<1.17
-torch==0.4.1.post2 (0.4.1도 가능한지는 확인 중)
-```
-이후 발생하는 tensorboard-plugin-wit 에러는 pip freeze 이후 해당 패키지 uninstall 해줘야함 --> 후에 tensorboard로 학습 상황 확인 가능
-
-- [SOLVED] "IndexError: Caught IndexError in DataLoader worker process 0." : train, valid 데이터셋 확인, 형식에 맞지 않는 문자열 수정
-
-- [SOLVED] DataLoader의 num_worker=1 crashes : num_worker=0으로 바꿔주기
-
-- [검토중] SHUTDOWN ERROR 오류 없이 프로그램 종료 -> 아마 GPU out-of-memory인듯?
-
-![KakaoTalk_20210815_184737867](https://user-images.githubusercontent.com/80621384/129483347-523976ff-98ea-48eb-b63f-524c7a040206.png)
-
-(0815note) 지금은 batch_size=4로 줄이고 데이터셋도 절반만 가지고 돌리는 중.. **대책 필요**
 
 
 ### further issus
