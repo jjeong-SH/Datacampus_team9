@@ -4,9 +4,7 @@ https://github.com/SKTBrain/KoBERT 에서 공개한 koBERT에 데이터를 추�
 
 **감정 4분류: neutral, happy, sad, angry**
 
-** 아직 수정중입니다!! [![Open In Colab](https://colab.research.google.com/drive/1ychrYmo9FHr1QwBlZseFFjxJTdOaswf4?usp=sharing)
-
-** 모델 파라미터, 파일 업뎃 후 py파일로 저장, api에서 끌어다 쓸 수 있는 모델 저장해야함
+Full code for training nlp_checkpoint.pt --> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UjGE84sDTyVxKvtEiYfolRwzRyQ-Dv9V?usp=sharing)
 
 
 ## 추가학습을 위한 data
@@ -67,11 +65,21 @@ patience = 3
 - max_len은 문장 길이 제3사분위보다 살짝 높은 값을 적용
 - early stopping 적용을 위한 patience 변수 설정
 
-## Output 예시
+## Output 예시(중간단계)
 크롤링한 동화책 중 빨간모자 텍스트를 문장별로 분리해, 최종 학습을 마친 모델로 감정 태깅
 
 보다 정확한 문장 분리를 위해 kss 패키지 설치 필요
 ```
 !pip install kss
 ```
+
+**label_dict = {'neutral':0, 'happy':1, 'sad':2, 'angry':3 }**
+
 ![image](https://user-images.githubusercontent.com/78553384/130914498-1eb05a1a-8555-4478-9fda-2e11ce4f0e94.png)
+
+## Output 예시(최종단계)
+emotion transplant가 완료된 Tacotron2 모델에 넣어 화자의 목소리로 읽을 수 있도록 하기 위해 txt 데이터로 변환 
+-> 'reference_wav|텍스트|speaker_id|emotion|emotion'
+- reference_wav의 경우 화자의 어떤 음성파일 경로를 넣어도 상관없음. 본 프로젝트에서는 jvoice폴더의 jvoice_3_L.wav로 통일
+
+![redhat_text](https://user-images.githubusercontent.com/80621384/131178939-bee67537-9996-410a-9138-e9c76241537b.png)
