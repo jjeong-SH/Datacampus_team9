@@ -1,7 +1,7 @@
 # 사용할 데이터 정리 및 수집
 모델 학습을 위한 데이터셋과, 모델이 완성된 후 여러 동화책 텍스트를 잘 읽을 수 있는지 확인하는 시연용 데이터셋으로 나뉨.
 
-## 1. 모델 훈련용
+## 1. For Training
 ### Selvas AI 감정 화자 데이터 (https://github.com/emotiontts/emotiontts_open_db/tree/master/Dataset/SpeechCorpus)
 
 **(주)셀바스AI가 '구축한 로봇의 감정 및 개성을 표현할 수 있는 대화형 음성코퍼스 DB'로, Tacotron2 모델의 감정 학습을 위해 사용**
@@ -53,11 +53,13 @@
 /content/drive/MyDrive/emotion-tts/jvoice/jvoice_6_R.wav|인디언들은 초자연적인 힘에 의해 연어가 회귀한다고 믿고 있었는데, 과학자들은 이러한 설명이 경험적으로 검증될 수 없기 때문에 과학적 의미가 없다고 생각했다.|pjh|0|0
 ```
 
-## 2. 시연용
+## 2. For Inference
 
 ### 동화책 텍스트 데이터(https://www.grimmstories.com/ko/grimm_donghwa/ppalgan_moja)
 **텍스트로만 이루어져 있음**
 
-automated 감성 태깅 시스템이 잘 작동하는지 확인하기 위해 사용할, 감이 분류되어 있지 않은 raw 동화책 텍스트 데이터
+감정이 분류되어 있지 않은 동화책 텍스트로, BERT 감정 태깅 시스템을 사용해 자동 태깅을 진행했습니다.
+
+이후 조원 박지현님의 음성을 학습하여 감정있는 오디오북을 생성했습니다.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/80621384/126634820-89deea72-28db-4f5b-9d51-0dba6d0ee49f.png", width="400"></p>
