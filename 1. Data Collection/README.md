@@ -56,7 +56,6 @@
 ## 2. For Inference
 
 ### 동화책 텍스트 데이터(https://www.grimmstories.com/ko/grimm_donghwa/ppalgan_moja)
-**텍스트로만 이루어져 있음**
 
 감정이 분류되어 있지 않은 동화책 텍스트로, BERT 감정 태깅 시스템을 사용해 자동 태깅을 진행했습니다.
 
