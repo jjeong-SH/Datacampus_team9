@@ -8,9 +8,9 @@
 
 ### How to infer
 
-'''
+```
 infer 코드를 넣으세요
-'''
+```
 
 ### Output data
 Sample은 xxx폴더를 참조하세요.
@@ -25,9 +25,9 @@ Sample은 xxx폴더를 참조하세요.
 
 ### How to infer
 
-'''
+```
 infer 코드를 넣으세요
-'''
+```
 
 ### Output data
 
