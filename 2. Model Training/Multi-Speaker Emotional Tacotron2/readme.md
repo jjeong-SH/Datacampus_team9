@@ -1,6 +1,6 @@
 # Multi-Speaker Emotional Tacotron2
 
-original github: https://github.com/hash2430/emotion_tts
+**original github: https://github.com/hash2430/emotion_tts**
 
 - NLP model(사용하지 않았음, 추가 학습하는 과정에서 initialize 이후 학습되지 않음) - https://drive.google.com/drive/folders/1-NXUTPzwPwZHXoQ5-AgE2d1hHc4B6kB3?usp=sharing
 - tts model - https://drive.google.com/file/d/1MHhog5ykYfaeD69ALrghQa9ZQs1MjNdV/view?usp=sharing
