@@ -1,3 +1,10 @@
+
+
+
+
+
+https://user-images.githubusercontent.com/78553384/131202594-8ecf72df-2766-48e0-95e4-7a9f93bc0091.mov
+
 # 아이들을 위한 ABC 오디오북 제작 시스템
 
 **자연어 감성분석 기술과 음성합성 기술을 융합한 개인 오디오북 제작 시스템**
@@ -21,6 +28,11 @@ ABC는 두단계를 거처 개인 오디오북을 제작합니다.
 
 그 Mel-Spectrogram을 waveglow에 주면 ‘감정이 들어간 사용자의 목소리로 들려주는 동화책’ 즉 저희 모델의 최종 output이 생성됩니다.
 
+https://user-images.githubusercontent.com/78553384/131202586-e8a442e2-d2b9-47b2-bf79-e7d212e6af4b.mov
+
+
+
+https://user-images.githubusercontent.com/78553384/131202589-345a624f-0566-48a1-8b77-d93325925abf.mov
 
 
 
