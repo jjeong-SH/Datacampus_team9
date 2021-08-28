@@ -10,13 +10,18 @@
 #### 이론 공부용 스터디노션: <https://www.notion.so/60eb7f4dc83845b397d2bae416d552f9?v=199c09d2679e4ded8f7fe05845c5a2fd>
 
 ABC는 두단계를 거처 개인 오디오북을 제작합니다. 
+
 1 단계 - 감성분석 단계 : BERT
+
 2 단계 - 음성합성 단계 : TACOTRON2 + Waveglow
 
 ![슬라이드15](https://user-images.githubusercontent.com/78553384/131202212-62802bc7-e3ce-44e0-bfc2-63c929e376aa.PNG)
 
 사용자의 음성으로 추가 학습된 모델에 동화책 대본을 input으로 넣어주면 BERT 모델이 문장 별로 감정 태깅을 하고 그 텍스트를 Tacotron2 모델에 넣어 Mel-spectrogram을 생성해줍니다. 
+
 그 Mel-Spectrogram을 waveglow에 주면 ‘감정이 들어간 사용자의 목소리로 들려주는 동화책’ 즉 저희 모델의 최종 output이 생성됩니다.
+
+
 
 
 
