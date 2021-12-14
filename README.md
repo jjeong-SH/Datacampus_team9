@@ -44,7 +44,7 @@ https://user-images.githubusercontent.com/78553384/131202589-345a624f-0566-48a1-
 
 
 
-#### 학습 후 감정이 들어간 박지현의 목소리:
+#### 학습 후 감정이 실리고, 박지현의 목소리를 모사한 AI voice:
 
 https://user-images.githubusercontent.com/78553384/131202586-e8a442e2-d2b9-47b2-bf79-e7d212e6af4b.mov
 
